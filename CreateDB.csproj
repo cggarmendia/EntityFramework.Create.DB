@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6082348B-75B4-469B-BCDF-81DE18B4B8DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CreateDB</RootNamespace>
+    <AssemblyName>CreateDB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADOD\Configuration\DeploymentConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\EnvironmentConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\ArtifactConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\ReleaseEjecutionEnvironmentConfiguration.cs" />
+    <Compile Include="ADOD\Entities\Deployment.cs" />
+    <Compile Include="ADOD\Entities\ReleaseEjecutionEnvironment.cs" />
+    <Compile Include="ADOD\Entities\Environment.cs" />
+    <Compile Include="ADOD\Entities\Artifact.cs" />
+    <Compile Include="ADOD\Migrations\201811270840146_initial_db.cs" />
+    <Compile Include="ADOD\Migrations\201811270840146_initial_db.Designer.cs">
+      <DependentUpon>201811270840146_initial_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADOD\Migrations\201811271128541_add_releaseEjecutionEnvironment.cs" />
+    <Compile Include="ADOD\Migrations\201811271128541_add_releaseEjecutionEnvironment.Designer.cs">
+      <DependentUpon>201811271128541_add_releaseEjecutionEnvironment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADOD\Migrations\201811271507290_change_column_releaseEjecutionEnvironment_environmentId.cs" />
+    <Compile Include="ADOD\Migrations\201811271507290_change_column_releaseEjecutionEnvironment_environmentId.Designer.cs">
+      <DependentUpon>201811271507290_change_column_releaseEjecutionEnvironment_environmentId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADOD\Migrations\201811271601595_add_deployment.cs" />
+    <Compile Include="ADOD\Migrations\201811271601595_add_deployment.Designer.cs">
+      <DependentUpon>201811271601595_add_deployment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADOD\Migrations\201811271624576_change_column_deployment_attempt.cs" />
+    <Compile Include="ADOD\Migrations\201811271624576_change_column_deployment_attempt.Designer.cs">
+      <DependentUpon>201811271624576_change_column_deployment_attempt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADOD\Migrations\201811281120508_add_column_deployment_lastModifiedOn.cs" />
+    <Compile Include="ADOD\Migrations\201811281120508_add_column_deployment_lastModifiedOn.Designer.cs">
+      <DependentUpon>201811281120508_add_column_deployment_lastModifiedOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DbContextBaseConfiguration.cs" />
+    <Compile Include="Common\IEntity.cs" />
+    <Compile Include="Common\TypeConfigurationExtensions.cs" />
+    <Compile Include="ADOD\Configuration\BuildChangeConfiguration .cs" />
+    <Compile Include="ADOD\Configuration\ReleaseEjecutionConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\BuildEjecutionConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\ReleasePipelineConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\BuildPipelineConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\OrganizationConfiguration.cs" />
+    <Compile Include="ADOD\Configuration\ProjectConfiguration.cs" />
+    <Compile Include="ADOD\Context\ADODContext.cs" />
+    <Compile Include="ADOD\Entities\BuildChange.cs" />
+    <Compile Include="ADOD\Entities\BuildEjecution.cs" />
+    <Compile Include="ADOD\Entities\BuildPipeline.cs" />
+    <Compile Include="ADOD\Entities\Organization.cs" />
+    <Compile Include="ADOD\Entities\Project.cs" />
+    <Compile Include="ADOD\Entities\ReleaseEjecution.cs" />
+    <Compile Include="ADOD\Entities\ReleasePipeline.cs" />
+    <Compile Include="ADOD\Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ADOD\Migrations\201811270840146_initial_db.resx">
+      <DependentUpon>201811270840146_initial_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADOD\Migrations\201811271128541_add_releaseEjecutionEnvironment.resx">
+      <DependentUpon>201811271128541_add_releaseEjecutionEnvironment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADOD\Migrations\201811271507290_change_column_releaseEjecutionEnvironment_environmentId.resx">
+      <DependentUpon>201811271507290_change_column_releaseEjecutionEnvironment_environmentId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADOD\Migrations\201811271601595_add_deployment.resx">
+      <DependentUpon>201811271601595_add_deployment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADOD\Migrations\201811271624576_change_column_deployment_attempt.resx">
+      <DependentUpon>201811271624576_change_column_deployment_attempt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ADOD\Migrations\201811281120508_add_column_deployment_lastModifiedOn.resx">
+      <DependentUpon>201811281120508_add_column_deployment_lastModifiedOn.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
